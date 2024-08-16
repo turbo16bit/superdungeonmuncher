@@ -1,5 +1,5 @@
 # superdungeonmuncher
-This is a port of Super Dungeon Muncher by nexy via PortMaster.
+This is a port of Super Dungeon Muncher by nexy via PortMaster. It uses https://github.com/JohnnyonFlame/gmloader-next.
 
 
 # License
