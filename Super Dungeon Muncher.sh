@@ -1,3 +1,5 @@
+#!/bin/bash
+
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 
 if [ -d "/opt/system/Tools/PortMaster/" ]; then
@@ -21,13 +23,10 @@ $ESUDO chmod 666 /dev/tty0
 
 GAMEDIR="/$directory/ports/superdungeonmuncher"
 
-export LD_LIBRARY_PATH="/usr/lib32:$GAMEDIR/libs"
-export GMLOADER_DEPTH_DISABLE=1
-export GMLOADER_SAVEDIR="$GAMEDIR/gamedata/"
-export GMLOADER_PLATFORM="os_linux"
-
 # We log the execution of the script into log.txt
 exec > >(tee "$GAMEDIR/log.txt") 2>&1
+
+export LD_LIBRARY_PATH="/usr/lib:$GAMEDIR/lib:$LD_LIBRARY_PATH"
 
 cd $GAMEDIR
 
